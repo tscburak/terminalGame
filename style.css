@@ -1,0 +1,56 @@
+body {
+    color: white;
+    background-color: black;
+    font-family:monospace;
+    font-family:var(--font,monospace);
+    line-height: 140%;
+   
+}
+input{
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    font-family:var(--font,monospace);
+    border: 0ch;
+    box-shadow: none;
+    outline: 0ch;
+    width: 90%;
+
+}
+footer {
+    position: fixed;
+    text-align: center;
+    padding: 10px;
+    bottom:0;
+    width:100%;
+    height:30px;   /* Height of the footer */
+    background-color: black;
+ }
+a:link {
+    color: lightblue;
+    background-color: transparent;
+    text-decoration: none;
+}
+  
+a:visited {
+    color: lightblue;
+    background-color: transparent;
+    text-decoration: none;
+}
+  
+a:hover {
+    color: white;
+    background-color: transparent;
+    text-decoration: underline;
+}
+  
+a:active {
+    color: lightblue;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.display{
+    overflow: auto;
+    padding-bottom: 80px;
+}
