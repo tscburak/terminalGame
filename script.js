@@ -53,9 +53,7 @@ function getResponse(){
     }
 }
 function impossibleGame(){
-    container.appendChild(document.createTextNode("Welcome to the Impossible Game!"));
-    const board = container.appendChild(document.createElement("pre"));
-    let moves = {
+    let models = {
         "e":
         "                \n"+
         "                \n"+
@@ -63,7 +61,7 @@ function impossibleGame(){
         "                \n"+
         "                \n"+
         "                \n"+
-        "                \n",
+        "                ",
 
         "o":
         "      /  /      \n" +
@@ -71,7 +69,7 @@ function impossibleGame(){
         "  /          /  \n"+
         "  /          /  \n"+
         "   /        /   \n"+
-        "      /  /      \n",
+        "      /  /      ",
 
         "x": 
         "     \\    /     \n"+
@@ -79,34 +77,76 @@ function impossibleGame(){
         "       \\/       \n"+
         "       /\\       \n"+
         "      /  \\      \n"+
-        "     /    \\     \n"
+        "     /    \\     ",
+
+        "wall":
+        "|\n"+
+        "|\n"+
+        "|\n"+
+        "|\n"+
+        "|\n"+
+        "|",
+
+        "ground":
+        "________________"
+        
     };
+    let table = document.getElementsByClassName("grid-container");
+    console.log(table);
+    //document.createTextNode("Welcome to the Impossible Game!");
+    for(let i = 0; i<25; i++){
+        window["item"+(i+1)] =  (table.item(0).appendChild(document.createElement("div")))
+        window["item"+(i+1)].classList.add("grid-item");
+        window["item"+(i+1)] = window["item"+(i+1)].appendChild(document.createElement("pre"));
 
-    board.appendChild(document.createTextNode(
-        "         A                 B               C       \n"+
-        "   __________________________________________________\n" +
-        "  |      /  /      |                |     \\    /     |\n"+
-        "  |   /        /   |                |      \\  /      |\n"+
-        "  |  /          /  |                |       \\/       |\n"+
-        "1 |  /          /  |                |       /\\       |\n"+
-        "  |   /        /   |                |      /  \\      |\n"+
-        "  |      /  /      |                |     /    \\     |\n"+
-        "  |________________|________________|________________|\n"+
-        "  |      /  /      |                |     \\    /     |\n"+
-        "  |   /        /   |                |      \\  /      |\n"+
-        "  |  /          /  |                |       \\/       |\n"+
-        "2 |  /          /  |                |       /\\       |\n"+
-        "  |   /        /   |                |      /  \\      |\n"+
-        "  |      /  /      |                |     /    \\     |\n"+
-        "  |________________|________________|________________|\n"+
-        "  |      /  /      |                |     \\    /     |\n"+
-        "  |   /        /   |                |      \\  /      |\n"+
-        "  |  /          /  |                |       \\/       |\n"+
-        "3 |  /          /  |                |       /\\       |\n"+
-        "  |   /        /   |                |      /  \\      |\n"+
-        "  |      /  /      |                |     /    \\     |\n"+
-        "  |________________|________________|________________|\n"));
+        if((i>=5 && i<=9)|| (i>=15 && i<= 19)){
+            if((i%5) % 2 == 1){
+                window["item"+(i+1)].appendChild(document.createTextNode(""));
+                continue;
+            }
+        window["item"+(i+1)].appendChild(document.createTextNode(models.ground));}
+        else if((i%5) % 2 == 1)
+            window["item"+(i+1)].appendChild(document.createTextNode(models.wall));
+    }
+    
+    console.log(table);
+    
+     item1.appendChild(document.createTextNode(models.x));
+    item3.appendChild(document.createTextNode(models.o));
+    // item3.appendChild(document.createTextNode(models.o));
+    // item4.appendChild(document.createTextNode(models.o));
+    // item5.appendChild(document.createTextNode(models.o));
+    // item6.appendChild(document.createTextNode(models.x));
+    // item7.appendChild(document.createTextNode(models.o));
+    // item8.appendChild(document.createTextNode(models.x));
+    // item9.appendChild(document.createTextNode(models.o));
 
-    // board.appendChild(document.createTextNode(moves.x + moves.e + moves.o));
-    console.log(board.value);
+    
+    // board.appendChild(document.createTextNode(
+    //     "         A                 B               C       \n"+
+    //     "                                                    \n" +
+    //     "        /  /      |                |     \\    /     \n"+
+    //     "     /        /   |                |      \\  /      \n"+
+    //     "    /          /  |                |       \\/       \n"+
+    //     "1   /          /  |                |       /\\       \n"+
+    //     "     /        /   |                |      /  \\      \n"+
+    //     "        /  /      |                |     /    \\     \n"+
+    //     "  ----------------+----------------+----------------\n"+
+    //     "        /  /      |                |     \\    /     \n"+
+    //     "     /        /   |                |      \\  /      \n"+
+    //     "    /          /  |                |       \\/       \n"+
+    //     "2   /          /  |                |       /\\       \n"+
+    //     "     /        /   |                |      /  \\      \n"+
+    //     "        /  /      |                |     /    \\     \n"+
+    //     "  ----------------+----------------+----------------\n"+
+    //     "        /  /      |                |     \\    /     |\n"+
+    //     "     /        /   |                |      \\  /      |\n"+
+    //     "    /          /  |                |       \\/       |\n"+
+    //     "3   /          /  |                |       /\\       |\n"+
+    //     "     /        /   |                |      /  \\      |\n"+
+    //     "        /  /      |                |     /    \\     |\n"+
+    //     "                                                   \n"));
+
+    // board.appendChild(document.createTextNode(models.x + models.e + models.o));
+    
 }
