@@ -1,4 +1,4 @@
-> https://tscburak.github.io/terminalGame/
+> https://tscburak.github.io/terminalGame/ _(Still working on it...)_
 ```
  ███████████                                     ███                       ████ 
 ░█░░░███░░░█                                    ░░░                       ░░███ 
